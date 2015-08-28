@@ -4,11 +4,14 @@ files:
   - source: /target/universal/test-app-1.0-SNAPSHOT.tgz
     destination: /home/ec2-user/play-app
 hooks:
-  #ApplicationStop:
-    #- location: scripts/stop_service.sh
-      #runas: root
-  ApplicationStart:
+  ApplicationStop:
+    - location: scripts/stop_server.sh
+      runas: root
+  AfterInstall:
     - location: scripts/setup.sh
+      runas: root
+  ApplicationStart:
+    - location: scripts/start-server.sh
       runas: root
   #BeforeInstall:
     #- location: scripts/cleanup.sh
