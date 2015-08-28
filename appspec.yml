@@ -1,15 +1,15 @@
 version: 0.0
 os: linux
 files:
-  - source: /
+  - source: /target/universal/test-app-1.0-SNAPSHOT.tgz
     destination: /home/ec2-user/play-app
 #hooks:
   #ApplicationStop:
     #- location: scripts/stop_service.sh
       #runas: root
-  #ApplicationStart:
-    #- location: scripts/start_service.sh
-      #runas: root
+  ApplicationStart:
+    - location: scripts/setup.sh
+      runas: root
   #BeforeInstall:
     #- location: scripts/cleanup.sh
       #runas: root
