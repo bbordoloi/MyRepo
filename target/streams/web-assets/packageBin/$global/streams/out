@@ -1,15 +1,1 @@
-[0m[[0minfo[0m] [0mPackaging /Users/bbordol/GitRepos/shs-platform-play/target/scala-2.11/test-app_2.11-1.0-SNAPSHOT-web-assets.jar ...[0m
-[0m[[0mdebug[0m] [0mInput file mappings:[0m
-[0m[[0mdebug[0m] [0m	public/stylesheets[0m
-[0m[[0mdebug[0m] [0m	  /Users/bbordol/GitRepos/shs-platform-play/public/stylesheets[0m
-[0m[[0mdebug[0m] [0m	public/stylesheets/main.css[0m
-[0m[[0mdebug[0m] [0m	  /Users/bbordol/GitRepos/shs-platform-play/public/stylesheets/main.css[0m
-[0m[[0mdebug[0m] [0m	public/images/favicon.png[0m
-[0m[[0mdebug[0m] [0m	  /Users/bbordol/GitRepos/shs-platform-play/public/images/favicon.png[0m
-[0m[[0mdebug[0m] [0m	public/javascripts/hello.js[0m
-[0m[[0mdebug[0m] [0m	  /Users/bbordol/GitRepos/shs-platform-play/public/javascripts/hello.js[0m
-[0m[[0mdebug[0m] [0m	public/javascripts[0m
-[0m[[0mdebug[0m] [0m	  /Users/bbordol/GitRepos/shs-platform-play/public/javascripts[0m
-[0m[[0mdebug[0m] [0m	public/images[0m
-[0m[[0mdebug[0m] [0m	  /Users/bbordol/GitRepos/shs-platform-play/public/images[0m
-[0m[[0minfo[0m] [0mDone packaging.[0m
+[0m[[0mdebug[0m] [0mJar uptodate: /Users/bbordol/activator-dist-1.3.5/test-app/target/scala-2.11/test-app_2.11-1.0-SNAPSHOT-web-assets.jar[0m

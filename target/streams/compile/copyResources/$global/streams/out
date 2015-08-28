@@ -1,4 +1,5 @@
 [0m[[0mdebug[0m] [0mCopy resource mappings: [0m
-[0m[[0mdebug[0m] [0m	(/Users/bbordol/GitRepos/shs-platform-play/conf/application.conf,/Users/bbordol/GitRepos/shs-platform-play/target/scala-2.11/classes/application.conf)[0m
-[0m[[0mdebug[0m] [0m	(/Users/bbordol/GitRepos/shs-platform-play/conf/logback.xml,/Users/bbordol/GitRepos/shs-platform-play/target/scala-2.11/classes/logback.xml)[0m
-[0m[[0mdebug[0m] [0m	(/Users/bbordol/GitRepos/shs-platform-play/conf/routes,/Users/bbordol/GitRepos/shs-platform-play/target/scala-2.11/classes/routes)[0m
+[0m[[0mdebug[0m] [0m	(/Users/bbordol/GitRepos/MyRepo/conf/application-context.xml,/Users/bbordol/GitRepos/MyRepo/target/scala-2.11/classes/application-context.xml)[0m
+[0m[[0mdebug[0m] [0m	(/Users/bbordol/GitRepos/MyRepo/conf/application.conf,/Users/bbordol/GitRepos/MyRepo/target/scala-2.11/classes/application.conf)[0m
+[0m[[0mdebug[0m] [0m	(/Users/bbordol/GitRepos/MyRepo/conf/logback.xml,/Users/bbordol/GitRepos/MyRepo/target/scala-2.11/classes/logback.xml)[0m
+[0m[[0mdebug[0m] [0m	(/Users/bbordol/GitRepos/MyRepo/conf/routes,/Users/bbordol/GitRepos/MyRepo/target/scala-2.11/classes/routes)[0m

@@ -1,11 +1,1 @@
-[0m[[0minfo[0m] [0mPackaging /Users/bbordol/GitRepos/shs-platform-play/target/scala-2.11/test-app_2.11-1.0-SNAPSHOT-sources.jar ...[0m
-[0m[[0mdebug[0m] [0mInput file mappings:[0m
-[0m[[0mdebug[0m] [0m	application.conf[0m
-[0m[[0mdebug[0m] [0m	  /Users/bbordol/GitRepos/shs-platform-play/conf/application.conf[0m
-[0m[[0mdebug[0m] [0m	logback.xml[0m
-[0m[[0mdebug[0m] [0m	  /Users/bbordol/GitRepos/shs-platform-play/conf/logback.xml[0m
-[0m[[0mdebug[0m] [0m	routes[0m
-[0m[[0mdebug[0m] [0m	  /Users/bbordol/GitRepos/shs-platform-play/conf/routes[0m
-[0m[[0mdebug[0m] [0m	controllers/Application.java[0m
-[0m[[0mdebug[0m] [0m	  /Users/bbordol/GitRepos/shs-platform-play/app/controllers/Application.java[0m
-[0m[[0minfo[0m] [0mDone packaging.[0m
+[0m[[0mdebug[0m] [0mJar uptodate: /Users/bbordol/activator-dist-1.3.5/test-app/target/scala-2.11/test-app_2.11-1.0-SNAPSHOT-sources.jar[0m

@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/Users/bbordol/GitRepos/shs-platform-play/conf/routes
-// @DATE:Wed Aug 19 11:56:28 PDT 2015
+// @SOURCE:/Users/bbordol/GitRepos/MyRepo/conf/routes
+// @DATE:Fri Aug 28 16:27:09 PDT 2015
 
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
 import play.core.routing.{ HandlerDef, ReverseRouteContext, queryString, dynamicString }
