@@ -3,7 +3,7 @@ os: linux
 files:
   - source: /target/universal/test-app-1.0-SNAPSHOT.tgz
     destination: /home/ec2-user/play-app
-#hooks:
+hooks:
   #ApplicationStop:
     #- location: scripts/stop_service.sh
       #runas: root
