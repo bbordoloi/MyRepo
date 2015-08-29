@@ -1,8 +1,22 @@
-@(routes: String)
+@(routes: play.api.libs.json.JsValue)
 
-Here are the routes: <br/>
+@import play.api.libs.json.JsString
+
+The following are the routes:   <br/>
 
 </br>
 <div id="routes">
- @routes
+ 
+ 	@for( route<-routes.as[play.api.libs.json.JsArray].value) {
+ 		<ul>
+ 		<li>Employee Number: @{(route\ "employeeNumber").as[JsString].value}</li>
+ 		<li>Service Order Number: @{(route\"serviceOrderNumber").as[JsString].value}</li>
+ 		<li>Route Date: @{(route\"routeDate").as[JsString].value}</li>
+ 		<li>Start Time: @{(route\"jobStartTime").as[JsString].value}</li>
+ 		<li>Transit Time: @{(route\"transitTime").as[JsString].value}</li>
+ 		<li>Departure Time: @{(route\"estimatedDepartureTime").as[JsString].value}</li>
+ 		</ul> 
+ 		 		 		 		
+   }
+
 </div>

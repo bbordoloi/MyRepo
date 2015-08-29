@@ -17,14 +17,14 @@ public class Application extends Controller {
     @Autowired
     RouteService routeService;
     
-    public Result index() {
+    public Result routes() {
         try {
         routeService = AppConfig.getControllerInstance(RouteService.class);
         } catch( Exception e) {
             return Results.internalServerError(e.toString());
         }
 
-        return ok(index.render(routeService.getRoutes().toString()));
+        return ok(index.render(routeService.getRoutes()));
     }
 
 }
