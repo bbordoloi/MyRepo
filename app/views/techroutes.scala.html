@@ -2,21 +2,31 @@
 
 @import play.api.libs.json.JsString
 
-The following are the routes:   <br/>
-
-</br>
 <div id="routes">
  
- 	@for( route<-routes.as[play.api.libs.json.JsArray].value) {
- 		<ul>
- 		<li>Employee Number: @{(route\ "employeeNumber").as[JsString].value}</li>
- 		<li>Service Order Number: @{(route\"serviceOrderNumber").as[JsString].value}</li>
- 		<li>Route Date: @{(route\"routeDate").as[JsString].value}</li>
- 		<li>Start Time: @{(route\"jobStartTime").as[JsString].value}</li>
- 		<li>Transit Time: @{(route\"transitTime").as[JsString].value}</li>
- 		<li>Departure Time: @{(route\"estimatedDepartureTime").as[JsString].value}</li>
- 		</ul> 
- 		 		 		 		
-   }
-
+ <table>
+  <caption align="left">Tech Routes</caption>
+  <thead>
+    <tr>
+       <th scope="rowgroup">Employee Number</th>
+       <th scope="col">Service Order Number</th>
+       <th scope="col">Route Date</th>
+       <th scope="col">Start Time</th>
+       <th scope="col">Transit Time</th>
+       <th scope="col">Departure Time</th>
+    </tr>
+  </thead>
+  <tbody>
+  @for( route<-routes.as[play.api.libs.json.JsArray].value) {
+ 	<tr>
+ 		<td>@{(route\"employeeNumber").as[JsString].value}</td>
+ 		<td>@{(route\"serviceOrderNumber").as[JsString].value}</td>
+ 		<td>@{(route\"routeDate").as[JsString].value}</td>
+ 		<td>@{(route\"jobStartTime").as[JsString].value}</td>
+ 		<td>@{(route\"transitTime").as[JsString].value}</td>
+ 		<td>@{(route\"estimatedDepartureTime").as[JsString].value}</td>
+ 	</tr> 
+ 	}
+  </tbody>
+ </table>
 </div>
