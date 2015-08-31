@@ -4,11 +4,11 @@ files:
   - source: /target/universal/test-app-1.0-SNAPSHOT.tgz
     destination: /home/ec2-user/play-app
   - source: scripts/stop-server.sh
-    destination: /home/ec2-user/pay-app/scripts
+    destination: /home/ec2-user/play-app/scripts
   - source: scripts/start-server.sh
-    destination: /home/ec2-user/pay-app/scripts
+    destination: /home/ec2-user/play-app/scripts
   - source: scripts/setup.sh
-    destination: /home/ec2-user/pay-app/scripts
+    destination: /home/ec2-user/play-app/scripts
   
 hooks:
   ApplicationStop:
@@ -20,7 +20,7 @@ hooks:
   ApplicationStart:
     - location: scripts/start-server.sh
       runas: root
-  #BeforeInstall:
-    #- location: scripts/cleanup.sh
-      #runas: root
+  BeforeInstall:
+    - location: scripts/cleanup.sh
+      runas: root
 
