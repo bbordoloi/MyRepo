@@ -1,9 +1,12 @@
 package models;
 
 
-import play.api.libs.json.JsValue;
+import java.util.List;
+
+//import play.api.libs.json.JsValue;
 
 public interface RestClient {
-    
-    public JsValue getRoutes();
+   
+    public <T> List<Route> get(final String url);
+
 }

@@ -1,30 +1,33 @@
 package controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import models.Route;
 import models.RouteService;
-import play.*;
 import play.mvc.*;
-
 import views.html.*;
 //import play.modules.spring.Spring;
 
 @Component
 public class Application extends Controller {
-
-   
+ 
     @Autowired
-    RouteService routeService;
-    
-    public Result routes() {
+    private RouteService routeService;
+    private int pageSize = play.Configuration.root().getInt("rss.routeService.ui.pageSize");
+    public Result routes( final int page ) {
+    	
         try {
         routeService = AppConfig.getControllerInstance(RouteService.class);
         } catch( Exception e) {
             return Results.internalServerError(e.toString());
         }
 
-        return ok(index.render(routeService.getRoutes()));
+        List<Route> routes = routeService.getRoutes();
+        System.out.println("emp#: " + routes.get(0).employeeNumber);
+		return ok(index.render(routes, routes.get(0).routeDate, page, routes.size() / pageSize, pageSize));
     }
 
 }

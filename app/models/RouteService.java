@@ -1,8 +1,8 @@
 package models;
 
-import play.api.libs.json.JsValue;
+import java.util.List;
 
 public interface RouteService {
 
-    public JsValue getRoutes();
+    public List<Route> getRoutes();
 }

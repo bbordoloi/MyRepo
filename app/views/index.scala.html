@@ -1,7 +1,7 @@
-@(message: play.api.libs.json.JsValue)
+@(message: List[Route])(date: String, page: Int, totalPages: Int, pageSize: Int)
 
 @main("Welcome to Play") {
 
-    @techroutes(message)
+    @techroutes(message)(date, page, totalPages, pageSize)
 
 }

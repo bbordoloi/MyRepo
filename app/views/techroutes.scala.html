@@ -1,32 +1,45 @@
-@(routes: play.api.libs.json.JsValue)
+@(routes: List[Route])(date: String, pageId: Int, totalPages: Int, pageSize: Int)
+@import scala.collection.immutable.HashMap; val page = (pageId - 1) * pageSize
 
-@import play.api.libs.json.JsString
+<script type="text/javascript">
+function nextPage() {
+	window.location="@{var map: Map[String,Int] = HashMap("page" -> (pageId+1)); controllers.routes.Application.routes(pageId + 1).url}"
+}
 
+function prevPage() {
+	window.location="@{var map: Map[String,Int] = HashMap("page" -> (pageId-1)); controllers.routes.Application.routes(pageId - 1).url}"
+}
+</script>
 <div id="routes">
  
  <table>
-  <caption align="left">Tech Routes</caption>
+  <caption align="left">Tech Routes for @date (page: @pageId of @totalPages)</caption>
   <thead>
     <tr>
        <th scope="rowgroup">Employee Number</th>
        <th scope="col">Service Order Number</th>
-       <th scope="col">Route Date</th>
        <th scope="col">Start Time</th>
        <th scope="col">Transit Time</th>
        <th scope="col">Departure Time</th>
+       <th scope="col">Job Duration</th>
     </tr>
   </thead>
   <tbody>
-  @for( route<-routes.as[play.api.libs.json.JsArray].value) {
+  
+   @for( route<- routes.slice(page, page + pageSize - 1)) {
  	<tr>
- 		<td>@{(route\"employeeNumber").as[JsString].value}</td>
- 		<td>@{(route\"serviceOrderNumber").as[JsString].value}</td>
- 		<td>@{(route\"routeDate").as[JsString].value}</td>
- 		<td>@{(route\"jobStartTime").as[JsString].value}</td>
- 		<td>@{(route\"transitTime").as[JsString].value}</td>
- 		<td>@{(route\"estimatedDepartureTime").as[JsString].value}</td>
+ 		<td>@route.employeeNumber</td>
+ 		<td>@route.serviceOrderNumber</td>
+ 		<td>@route.jobStartTime</td>
+ 		<td>@route.transitTime</td>
+ 		<td>@route.estimatedDepartureTime</td>
+ 		<td>@route.jobDuration</td>
  	</tr> 
  	}
   </tbody>
  </table>
+ @if(pageId>1) {
+   <input type="button" value="prev page" onclick="prevPage()" align="right"/>
+ }
+ <input type="button" value="next page" onclick="nextPage()" align="right"/>
 </div>

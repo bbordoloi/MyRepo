@@ -44,3 +44,18 @@ thead th {
     border-bottom: 3px solid #000;
     text-transform: uppercase;
 }
+
+input {
+	padding: .75em;
+	border-collapse: collapse;
+
+    -webkit-box-shadow: 3px 3px 7px #055584;
+    -moz-box-shadow: 3px 3px 7px #055584;
+    box-shadow: 3px 3px 7px #055584;
+    
+    background: #055584;
+    color: #c0e0f2;
+    
+    font-size: .8125em;
+    border: 1px solid #000;
+}
