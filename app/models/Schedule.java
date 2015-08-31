@@ -1,6 +1,6 @@
 package models;
 
-public class Route {
+public class Schedule {
 
 	public String employeeNumber;
 	public String serviceOrderNumber;

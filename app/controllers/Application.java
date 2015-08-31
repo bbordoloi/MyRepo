@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import models.Route;
-import models.RouteService;
+import models.Schedule;
+import models.ScheduleService;
 import play.mvc.*;
 import views.html.*;
 //import play.modules.spring.Spring;
@@ -15,19 +15,19 @@ import views.html.*;
 public class Application extends Controller {
  
     @Autowired
-    private RouteService routeService;
+    private ScheduleService scheduleService;
     private int pageSize = play.Configuration.root().getInt("rss.routeService.ui.pageSize");
-    public Result routes( final int page ) {
+    public Result schedules( final int page ) {
     	
         try {
-        routeService = AppConfig.getControllerInstance(RouteService.class);
+        scheduleService = AppConfig.getControllerInstance(ScheduleService.class);
         } catch( Exception e) {
             return Results.internalServerError(e.toString());
         }
 
-        List<Route> routes = routeService.getRoutes();
-        System.out.println("emp#: " + routes.get(0).employeeNumber);
-		return ok(index.render(routes, routes.get(0).routeDate, page, (int)Math.ceil(routes.size() / pageSize), pageSize));
+        List<Schedule> schedules = scheduleService.getSchedules();
+        System.out.println("#schedules: " + schedules.size());
+		return ok(index.render(schedules, schedules.get(0).routeDate, page, (int)Math.ceil(((double)schedules.size()) / pageSize), pageSize));
     }
 
 }

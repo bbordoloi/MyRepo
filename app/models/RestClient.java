@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface RestClient {
    
-    public <T> List<Route> get(final String url);
+    public <T> List<Schedule> get(final String url);
 
 }

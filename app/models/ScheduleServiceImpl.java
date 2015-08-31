@@ -9,10 +9,10 @@ import org.springframework.stereotype.Component;
 import controllers.AppConfig;
 
 @Component
-public class RouteServiceImpl implements RouteService {
+public class ScheduleServiceImpl implements ScheduleService {
 
     @Override
-    public List<Route> getRoutes() {
+    public List<Schedule> getSchedules() {
         
         RestClient client = null;
         try {
@@ -22,7 +22,7 @@ public class RouteServiceImpl implements RouteService {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        return new ArrayList<Route>();
+        return new ArrayList<Schedule>();
     }
 
 }

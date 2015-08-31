@@ -24,7 +24,7 @@ public class RestClientImpl implements RestClient {
 
     private HttpClient client;
     
-    public <T> List<Route> get(final String url) {
+    public <T> List<Schedule> get(final String url) {
         
         client = HttpClientBuilder.create().build();
         HttpGet request = new HttpGet(url);
@@ -42,7 +42,7 @@ public class RestClientImpl implements RestClient {
        return null;
     }
     
-    private <T> List<Route> getJsonResponse(final HttpResponse response) throws UnsupportedEncodingException, IllegalStateException, IOException {
+    private <T> List<Schedule> getJsonResponse(final HttpResponse response) throws UnsupportedEncodingException, IllegalStateException, IOException {
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(response.getEntity().getContent(), "UTF-8"));
         StringBuilder builder = new StringBuilder();
@@ -50,11 +50,11 @@ public class RestClientImpl implements RestClient {
             builder.append(line).append("\n");
         }
         //JsonNode value = Json.parse(builder.toString());
-        List<Route> routes = fromJSON(new TypeReference<List<Route>>(){}, builder.toString());
-        if (routes == null) {
+        List<Schedule> schedules = fromJSON(new TypeReference<List<Schedule>>(){}, builder.toString());
+        if (schedules == null) {
         	System.out.println("routes == null");
         }
-        return routes;
+        return schedules;
     }
     
     private static <T> T fromJSON(final TypeReference<T> type,
