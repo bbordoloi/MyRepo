@@ -27,7 +27,7 @@ public class Application extends Controller {
 
         List<Route> routes = routeService.getRoutes();
         System.out.println("emp#: " + routes.get(0).employeeNumber);
-		return ok(index.render(routes, routes.get(0).routeDate, page, routes.size() / pageSize, pageSize));
+		return ok(index.render(routes, routes.get(0).routeDate, page, Math.ceil(routes.size() / pageSize), pageSize));
     }
 
 }

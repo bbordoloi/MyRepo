@@ -41,5 +41,7 @@ function prevPage() {
  @if(pageId>1) {
    <input type="button" value="prev page" onclick="prevPage()" align="right"/>
  }
- <input type="button" value="next page" onclick="nextPage()" align="right"/>
+ @if(pageId<totalPages) {
+   <input type="button" value="next page" onclick="nextPage()" align="right"/>
+ }
 </div>
