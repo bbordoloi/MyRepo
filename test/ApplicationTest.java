@@ -4,6 +4,9 @@ import java.util.List;
 import java.util.Map;
 
 import com.fasterxml.jackson.databind.JsonNode;
+import com.google.common.collect.Lists;
+
+import models.Route;
 
 import org.junit.*;
 
@@ -35,7 +38,7 @@ public class ApplicationTest {
 
     //@Test
     public void renderTemplate() {
-        Content html = views.html.index.render(Json.parse("{\"content\":\"Literal\",\"pos\":{\"left\":20,\"top\":20}}"));
+        Content html = views.html.index.render(new ArrayList<Route>(),"2015/8/31", 1, 1, 1);
         assertEquals("text/html", contentType(html));
         assertTrue(contentAsString(html).contains("The following are the routes"));
     }
