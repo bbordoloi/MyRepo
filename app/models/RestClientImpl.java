@@ -24,12 +24,12 @@ public class RestClientImpl implements RestClient {
 
     private HttpClient client;
     
-    public <T> List<Schedule> get(final String url) {
+    public String getJson(final String url) {
         
         client = HttpClientBuilder.create().build();
-        HttpGet request = new HttpGet(url);
+        final HttpGet request = new HttpGet(url);
         try {
-        	HttpResponse response = client.execute(request);
+        	final HttpResponse response = client.execute(request);
             return getJsonResponse(response);
         } catch (ClientProtocolException e) {
             // TODO Auto-generated catch block
@@ -42,31 +42,14 @@ public class RestClientImpl implements RestClient {
        return null;
     }
     
-    private <T> List<Schedule> getJsonResponse(final HttpResponse response) throws UnsupportedEncodingException, IllegalStateException, IOException {
+    private String getJsonResponse(final HttpResponse response) throws UnsupportedEncodingException, IllegalStateException, IOException {
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(response.getEntity().getContent(), "UTF-8"));
         StringBuilder builder = new StringBuilder();
         for (String line = null; (line = reader.readLine()) != null;) {
             builder.append(line).append("\n");
         }
-        //JsonNode value = Json.parse(builder.toString());
-        List<Schedule> schedules = fromJSON(new TypeReference<List<Schedule>>(){}, builder.toString());
-        if (schedules == null) {
-        	System.out.println("routes == null");
-        }
-        return schedules;
+        
+        return builder.toString();
     }
-    
-    private static <T> T fromJSON(final TypeReference<T> type,
-    	      final String jsonPacket) {
-    	   T data = null;
-
-    	   try {
-    	      data = new ObjectMapper().readValue(jsonPacket, type);
-    	   } catch (Exception e) {
-    	      // Handle the problem
-    		   System.out.println("exception in fromJSON = " + e.getMessage());
-    	   }
-    	   return data;
-    	}
 }

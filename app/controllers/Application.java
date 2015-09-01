@@ -17,7 +17,7 @@ public class Application extends Controller {
     @Autowired
     private ScheduleService scheduleService;
     private int pageSize = play.Configuration.root().getInt("rss.routeService.ui.pageSize");
-    public Result schedules( final int page ) {
+    public Result schedules(final int page ) {
     	
         try {
         scheduleService = AppConfig.getControllerInstance(ScheduleService.class);
@@ -25,8 +25,8 @@ public class Application extends Controller {
             return Results.internalServerError(e.toString());
         }
 
-        List<Schedule> schedules = scheduleService.getSchedules();
-        System.out.println("#schedules: " + schedules.size());
+        final List<Schedule> schedules = scheduleService.getSchedules();
+        play.Logger.info("#schedules: " + schedules.size());
 		return ok(index.render(schedules, schedules.get(0).routeDate, page, (int)Math.ceil(((double)schedules.size()) / pageSize), pageSize));
     }
 
